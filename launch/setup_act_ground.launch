@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find vrpn_client_ros)/launch/sample.launch">
+		<arg name="server" value="192.168.1.2"/>
+	</include>
+    <!--<remap from="vrpn_client_node/uav1/pose" to="uav1/mavros/vision_pose/pose" />-->
+
+    <node pkg="px4_test_pkg" type="console" name="console" output="screen" launch-prefix="gnome-terminal --tab --" >
+        <param name="uav_name" value="uav1" />
+    </node>
+</launch>
